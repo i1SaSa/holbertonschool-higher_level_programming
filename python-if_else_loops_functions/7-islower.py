@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-def uppercase(str):
-    if 97 <= ord(str) <= 122:
+def islower(c):
+    if 97 <= ord(c) <= 122:
         return True
     return False
-
