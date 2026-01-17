@@ -5,7 +5,9 @@ if __name__ == "__main__":
     y = 0
     for u in sys.argv[1:]:
         y += 1
-    if len(sys.argv) > 1:
+    if len(sys.argv) - 1 == 1:
+        print("{} argument:".format(y))
+    elif len(sys.argv) - 1 > 1:
         print("{} arguments:".format(y))
     else:
         print("0 arguments.")
