@@ -1,8 +1,13 @@
 #!/usr/bin/python3
 def no_c(my_string):
+    new_string = ""
     for i in my_string:
-        y = ord(i)
-        if y == 99 or y == 67:
+        if i == 'c' or i == 'C':
             continue
-        print("{}".format(chr(y)), end="")
-    return chr(y)
+        new_string += i
+    return new_string
+
+
+print(no_c("Best School"))
+print(no_c("Chicago"))
+print(no_c("C is fun!"))
