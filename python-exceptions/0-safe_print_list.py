@@ -1,4 +1,11 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    new_matrix = list(map(lambda x: list(map(lambda y: y * y, x)), matrix))
-    return new_matrix
+def safe_print_list(my_list=[], x=0):
+    count = 0
+    for i in range(x):
+        try:
+            print(my_list[i], end="")
+            count += 1
+        except IndexError:
+            break
+    print()
+    return count
