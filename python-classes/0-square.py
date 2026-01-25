@@ -1,12 +1,11 @@
 #!/usr/bin/python3
+"""
+Docstring for python-classes.0-square
+"""
+
+
 class Square:
     '''
         Docstring for Square
         '''
-
-    def __init__(self):
-        '''
-                Docstring for __init__
-
-                :param self: Description
-                '''
+    pass
