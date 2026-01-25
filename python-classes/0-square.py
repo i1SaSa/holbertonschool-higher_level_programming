@@ -10,4 +10,3 @@ class Square:
 
                 :param self: Description
                 '''
-        pass
