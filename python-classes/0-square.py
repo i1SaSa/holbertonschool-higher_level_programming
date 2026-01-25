@@ -5,4 +5,9 @@ class Square:
         '''
 
     def __init__(self):
+        '''
+                Docstring for __init__
+
+                :param self: Description
+                '''
         pass
