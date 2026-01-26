@@ -16,7 +16,7 @@ class Square:
                 :param self: Description
                 :param size: Description
                 '''
-        if isinstance(size, int):
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
