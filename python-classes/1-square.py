@@ -4,12 +4,16 @@ Docstring for python-classes.1-square
 '''
 
 
-class square:
+class Square:
     '''
     Docstring for square
     '''
-    def _size():
+
+    def __init__(self, size):
         '''
-                Docstring for _size
+                Docstring for __init__
+
+                :param self: Description
+                :param size: Description
                 '''
-        pass
+        self.__size = size
