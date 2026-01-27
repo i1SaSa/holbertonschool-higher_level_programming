@@ -17,8 +17,8 @@ class Square:
                 :param size: Description
                 :param position: Description
                 '''
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         '''
@@ -68,7 +68,7 @@ class Square:
                 :param self: Description
                 :param value: Description
                 '''
-        if not isinstance(value, tuple) and all(n < 0 for n in value) and len(value) != 2:
+        if not isinstance(value, tuple) or all(n < 0 for n in value) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
