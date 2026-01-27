@@ -10,28 +10,10 @@ class Square:
     '''
 
     def __init__(self, size=0, position=(0, 0)):
-        '''
-                Docstring for __init__
-
-                :param self: Description
-                :param size: Description
-                :param position: Description
-                '''
-        if not isinstance(position, tuple) and all(n > 0 for n in position):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self.__size = size
         self.__position = position
 
     def area(self):
-        '''
-                Docstring for area
-
-                :param self: Description
-                '''
         return self.__size * self.__size
 
     @property
@@ -46,9 +28,19 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @property
+    def position(self):
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        if not isinstance(value, tuple) and all(n < 0 for n in value) and len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
     def my_print(self):
         if self.__size == 0:
             print()
+            return
         if self.__position[1] > 0:
             for y in range(self.__position[1]):
                 print()
@@ -58,12 +50,3 @@ class Square:
             for j in range(self.__size - 1):
                 print("#", end="")
             print("#")
-
-    @property
-    def position(self):
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        if not isinstance(value, tuple) & all(n > 0 for n in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
