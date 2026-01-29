@@ -60,5 +60,5 @@ class Rectangle:
         rows_list = [one_row] * self.__height
         return "\n".join(rows_list)
 
-    def __str__(self):
+    def __repr__(self):
         return "Rectangle({},{})".format(self.width, self.height)
