@@ -56,9 +56,9 @@ class Rectangle:
     def print(self):
         if self.__height == 0 or self.__width == 0:
             return " "
-        for x in range(self.height):
+        for x in range(self.height - 1):
             print("#", end="")
-            for i in range(self.width):
+            for i in range(self.width - 1):
                 print("#", end="")
             print()
         return ""
@@ -66,9 +66,9 @@ class Rectangle:
     def __str__(self):
         if self.__height == 0 or self.__width == 0:
             return " "
-        for x in range(self.height):
+        for x in range(self.height - 1):
             print("#", end="")
-            for i in range(self.width):
+            for i in range(self.width - 1):
                 print("#", end="")
             print()
         return ""
