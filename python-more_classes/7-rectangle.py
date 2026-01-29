@@ -9,6 +9,7 @@ class Rectangle:
         Docstring for Rectangle
         '''
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         Rectangle.number_of_instances += 1
@@ -58,9 +59,9 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        one_row = "#" * self.__width
-        rows_list = [one_row] * self.__height
-        return "\n".join(rows_list)
+        # Convert print_symbol to string for printing
+        symbol = str(self.print_symbol)
+        return "\n".join(symbol * self.__width for _ in range(self.__height))
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.width, self.height)
@@ -68,6 +69,3 @@ class Rectangle:
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    def print_symbol(self,value):
-        print("{}".format(value))
