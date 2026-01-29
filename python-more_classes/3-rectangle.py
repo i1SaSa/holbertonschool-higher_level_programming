@@ -53,22 +53,9 @@ class Rectangle:
             return 0
         return 2*(self.__width + self.__height)
 
-    def print(self):
-        if self.__height == 0 or self.__width == 0:
-            return " "
-        for x in range(self.height - 1):
-            print("#", end="")
-            for i in range(self.width - 1):
-                print("#", end="")
-            print()
-        return ""
-
     def __str__(self):
-        if self.__height == 0 or self.__width == 0:
-            return " "
-        for x in range(self.height - 1):
-            print("#", end="")
-            for i in range(self.width - 1):
-                print("#", end="")
-            print()
-        return ""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        one_row = "#" * self.__width
+        rows_list = [one_row] * self.__height
+        return "\n".join(rows_list)
