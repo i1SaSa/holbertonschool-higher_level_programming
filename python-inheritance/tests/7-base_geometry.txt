@@ -1,23 +1,85 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
->>> bg.integer_validator("ahmed", 10)
->>> bg.integer_validator("saleh", 11)
+================================
+Test BaseGeometry integer_validator
+================================
 
->>> bg.integer_validator("name", "name")
-Traceback (most recent call last):
-...
-TypeError: name must be an integer
+Import the class first:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> bg.integer_validator("age", 0)
-Traceback (most recent call last):
-...
-ValueError: age must be greater than 0
+Create an instance:
+    >>> bg = BaseGeometry()
 
->>> bg.integer_validator("distance", -4)
-Traceback (most recent call last):
-...
-ValueError: distance must be greater than 0
+Test the area method (Should raise Exception):
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
 
-Traceback (most recent call last):
-...
-Exception: area() is not implemented
+Test with valid integers (Should output nothing):
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 89)
+
+Test with missing arguments (No arguments):
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test with missing arguments (Only one argument):
+    >>> bg.integer_validator("age")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test with a string instead of int (Should raise TypeError):
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+Test with a float instead of int (Should raise TypeError):
+    >>> bg.integer_validator("age", 4.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Test with a tuple instead of int (Should raise TypeError):
+    >>> bg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Test with a list instead of int (Should raise TypeError):
+    >>> bg.integer_validator("age", [3])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Test with a boolean instead of int (Should raise TypeError):
+    >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Test with a set instead of int (Should raise TypeError):
+    >>> bg.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Test with None instead of int (Should raise TypeError):
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Test with zero (Should raise ValueError):
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+Test with negative number (Should raise ValueError):
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+    ...
+    ValueError: distance must be greater than 0
