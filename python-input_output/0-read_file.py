@@ -11,4 +11,4 @@ def read_file(filename=""):
     :param filename: Description
     '''
     with open(filename, "r") as f:
-        print(f.read(),end="")
+        print(f.read(), end="")
