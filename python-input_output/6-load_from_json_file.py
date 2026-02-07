@@ -11,4 +11,5 @@ def load_from_json_file(filename):
 
     :param filename: Description
     '''
-    json.load(filename)
+    with open(filename, "r") as f:
+        json.load(f)
