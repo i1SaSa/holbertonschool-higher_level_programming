@@ -12,4 +12,4 @@ def load_from_json_file(filename):
     :param filename: Description
     '''
     with open(filename, "r") as f:
-        print(json.load(f))
+        return json.load(f)
