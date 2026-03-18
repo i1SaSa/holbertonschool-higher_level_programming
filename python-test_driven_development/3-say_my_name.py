@@ -10,7 +10,7 @@ def say_my_name(first_name, last_name=""):
 
     Args:
         first_name: The first name (must be a string).
-        last_name: The last name (must be a string, defaults to an empty string).
+        last_name: The last name (must be a string)
 
     Raises:
         TypeError: If either first_name or last_name is not a string.
