@@ -62,3 +62,21 @@ Div is zero:
     Traceback (most recent call last):
         ...
     ZeroDivisionError: division by zero
+
+4. Edge Cases and Missing Arguments:
+====================================
+Dividing by Infinity:
+    >>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+    [[0.0, 0.0], [0.0, 0.0]]
+
+Missing one argument (div):
+    >>> matrix_divided([[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Missing two arguments (empty call):
+    >>> matrix_divided()
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
