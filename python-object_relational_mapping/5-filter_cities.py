@@ -26,7 +26,7 @@ if __name__ == "__main__":
     WHERE states.name = %s
     ORDER BY cities.id ASC
     """
-    
+
     cursor.execute(query, (state_name,))
 
     query_rows = cursor.fetchall()
