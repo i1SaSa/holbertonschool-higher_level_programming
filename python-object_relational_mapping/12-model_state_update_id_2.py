@@ -23,5 +23,4 @@ if __name__ == "__main__":
         state_to_update.name = "New Mexico"
         session.commit()
 
-    # إغلاق الجلسة
     session.close()
