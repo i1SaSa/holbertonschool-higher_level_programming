@@ -1,3 +1,4 @@
+import json
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -16,6 +17,18 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+
+@app.route('/items')
+def items():
+    try:
+        with open('items.json', 'r') as f:
+            data = json.load(f)
+            items_list = data.get("items", [])
+    except FileNotFoundError:
+        items_list = []
+
+    return render_template('items.html', items=items_list)
 
 
 if __name__ == '__main__':
