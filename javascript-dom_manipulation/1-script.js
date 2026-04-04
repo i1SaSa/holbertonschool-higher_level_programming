@@ -1,7 +1,7 @@
-const clickableElement = document.querySelector('#red_header');
+const redHeaderTrigger = document.querySelector('#red_header');
 
 const headerElement = document.querySelector('header');
 
-clickableElement.addEventListener('click', function () {
-	headerElement.classList.add('red');
+redHeaderTrigger.addEventListener('click', function () {
+	headerElement.style.color = '#FF0000';
 });
